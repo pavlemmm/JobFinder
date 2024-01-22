@@ -1,6 +1,7 @@
 package com.example.jobfinder.scenes;
 
 import com.example.jobfinder.db.UserCRUD;
+import com.example.jobfinder.entities.Employee;
 import com.example.jobfinder.entities.Employer;
 import com.example.jobfinder.entities.User;
 import com.example.jobfinder.enums.UserTypes;
@@ -56,13 +57,14 @@ public class LoginScene extends Application {
                 String passwordText = tf2.getText();
                 User user = UserCRUD.readLoggedUser(emailText, passwordText);
                 if(user != null) {
-                    Session.setUser(user);
                     stage.close();
                     if(user instanceof Employer) {
+                        Session.setEmployer((Employer)user);
                         Session.setUserType(UserTypes.Employer);
                         new DashboardEmployerScene().start(stage);
                     }
                     else {
+                        Session.setEmployee((Employee)user);
                         Session.setUserType(UserTypes.Employee);
                         new DashboardEmployeeScene().start(stage);
                     }

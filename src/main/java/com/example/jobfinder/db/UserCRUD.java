@@ -3,6 +3,7 @@ package com.example.jobfinder.db;
 import com.example.jobfinder.entities.Employee;
 import com.example.jobfinder.entities.Employer;
 import com.example.jobfinder.entities.User;
+import com.example.jobfinder.enums.UserTypes;
 import com.example.jobfinder.util.Session;
 
 import java.sql.PreparedStatement;
@@ -157,16 +158,22 @@ public class UserCRUD {
         return true;
     }
 
+    /**
+     * Method for deleting current user
+     *
+     * @throws SQLException - throws sql exception
+     */
     public static void deleteCurrentUser() throws SQLException {
         DBCon.openConnection();
 
         PreparedStatement stmt;
-        if(Session.getUser() instanceof Employee) {
+        if(Session.getUserType() == UserTypes.Employee) {
             stmt = DBCon.con.prepareStatement("DELETE FROM Employee WHERE Employee_ID = ?");
+            stmt.setInt(1, Session.getEmployee().getID());
         } else {
             stmt = DBCon.con.prepareStatement("DELETE FROM Employer WHERE Employer_ID = ?");
+            stmt.setInt(1, Session.getEmployer().getID());
         }
-        stmt.setInt(1, Session.getUser().getID());
         stmt.execute();
 
         DBCon.closeConnection();

@@ -12,10 +12,8 @@ import javafx.stage.Stage;
 public class DashboardEmployerScene extends Application {
     @Override
     public void start(Stage stage) {
-        Employer user = (Employer) Session.getUser();
 
         BorderPane root = new BorderPane();
-        root.setTop(new Label(user.getCompanyName()));
 
         Scene scene = new Scene(root, 320, 240);
         stage.setTitle("JobFinder - Dashboard");

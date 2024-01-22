@@ -4,29 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1f05319a-41a9-4b1d-a298-ea033e00dd13" name="Changes" comment="Initial commit">
-      <change afterPath="$PROJECT_DIR$/icons/jobs.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/icons/logout.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/icons/message.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/jobfinder/db/JobCRUD.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/jobfinder/entities/Job.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/jobfinder/enums/JobState.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/jobfinder/enums/UserTypes.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/jobfinder/scenes/DashboardEmployeeScene.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/jobfinder/scenes/DashboardEmployerScene.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/jobfinder/scenes/RegisterScene.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/jobfinder/util/Session.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/jobfinder/util/UIUtil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/jobfinder/util/Validation.java" afterDir="false" />
+    <list default="true" id="1f05319a-41a9-4b1d-a298-ea033e00dd13" name="Changes" comment="22.1.">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/jobfinder/ui_elements/Elements.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/jobfinder/ui_elements/Panes.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/jobfinder/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/jobfinder/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/jobfinder/db/JobCRUD.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/jobfinder/db/JobCRUD.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/jobfinder/db/UserCRUD.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/jobfinder/db/UserCRUD.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/jobfinder/entities/Employee.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/jobfinder/entities/Employee.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/jobfinder/entities/Employer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/jobfinder/entities/Employer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/jobfinder/entities/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/jobfinder/entities/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/jobfinder/scenes/DashboardEmployeeScene.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/jobfinder/scenes/DashboardEmployeeScene.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/jobfinder/scenes/DashboardEmployerScene.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/jobfinder/scenes/DashboardEmployerScene.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/jobfinder/scenes/LoginScene.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/jobfinder/scenes/LoginScene.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/jobfinder/scenes/MenuScene.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/jobfinder/scenes/RegisterScene.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/jobfinder/scenes/RegisterScene.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/jobfinder/util/Session.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/jobfinder/util/Session.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/jobfinder/util/UIUtil.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,8 +27,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="JavaFXApplication" />
-        <option value="Class" />
         <option value="Enum" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -91,13 +81,21 @@
       <option name="project" value="LOCAL" />
       <updated>1705767143366</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="22.1.">
+      <created>1705954380971</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1705954380971</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="Initial commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="Initial commit" />
+    <MESSAGE value="22.1." />
+    <option name="LAST_COMMIT_MESSAGE" value="22.1." />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>

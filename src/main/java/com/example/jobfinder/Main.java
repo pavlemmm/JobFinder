@@ -15,7 +15,7 @@ public class Main extends Application {
         Employee u = new Employee();
         u.setFirstName("Pavle");
         u.setLastName("Mitic");
-        Session.setUser(u);
+        Session.setEmployee(u);
         new DashboardEmployeeScene().start(stage);
     }
 

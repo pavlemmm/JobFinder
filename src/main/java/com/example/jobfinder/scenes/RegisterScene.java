@@ -112,7 +112,7 @@ public class RegisterScene extends Application {
                     return;
                 }
 
-                Session.setUser(UserCRUD.registerEmployee(emailText, passwordText, firstNameText, lastNameText));
+                Session.setEmployee(UserCRUD.registerEmployee(emailText, passwordText, firstNameText, lastNameText));
                 Session.setUserType(UserTypes.Employee);
 
                 stage.close();
@@ -192,7 +192,7 @@ public class RegisterScene extends Application {
                     return;
                 }
 
-                Session.setUser(UserCRUD.registerEmployer(emailText, passwordText, companyNameText));
+                Session.setEmployer(UserCRUD.registerEmployer(emailText, passwordText, companyNameText));
                 Session.setUserType(UserTypes.Employer);
 
                 stage.close();

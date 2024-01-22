@@ -6,15 +6,24 @@ import com.example.jobfinder.entities.User;
 import com.example.jobfinder.enums.UserTypes;
 
 public class Session {
-    private static User user;
     private static UserTypes userType;
+    private static Employee employee;
+    private static Employer employer;
 
-    public static User getUser() {
-        return user;
+    public static Employee getEmployee() {
+        return employee;
     }
 
-    public static void setUser(User user) {
-        Session.user = user;
+    public static Employer getEmployer() {
+        return employer;
+    }
+
+    public static void setEmployee(Employee employee) {
+        Session.employee = employee;
+    }
+
+    public static void setEmployer(Employer employer) {
+        Session.employer = employer;
     }
 
     public static UserTypes getUserType() {

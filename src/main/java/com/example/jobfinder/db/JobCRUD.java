@@ -20,7 +20,7 @@ public class JobCRUD {
 
             PreparedStatement stmt;
             stmt = DBCon.con.prepareStatement("SELECT * FROM Job WHERE Employer_ID = ?");
-            stmt.setInt(1, Session.getUser().getID());
+            stmt.setInt(1, Session.getEmployer().getID());
             ResultSet set = stmt.executeQuery();
 
             while (set.next()) {
@@ -49,7 +49,7 @@ public class JobCRUD {
 
             PreparedStatement stmt;
             stmt = DBCon.con.prepareStatement("SELECT * FROM Job WHERE Employee_ID = ?");
-            stmt.setInt(1, Session.getUser().getID());
+            stmt.setInt(1, Session.getEmployee().getID());
             ResultSet set = stmt.executeQuery();
 
             while (set.next()) {
@@ -97,5 +97,20 @@ public class JobCRUD {
         }
 
         return jobs;
+    }
+
+    public static void acceptJob(int jobID) {
+        try {
+            DBCon.openConnection();
+
+            PreparedStatement stmt;
+            stmt = DBCon.con.prepareStatement("UPDATE Job SET Employee_ID = ? WHERE Job_ID = ?");
+            stmt.setInt(1, Session.getEmployee().getID());
+            stmt.setInt(2, jobID);
+            stmt.execute();
+            DBCon.closeConnection();
+        } catch (SQLException e) {
+            Logger.getLogger(JobCRUD.class.getName()).log(Level.SEVERE, null, e);
+        }
     }
 }
