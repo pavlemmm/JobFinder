@@ -1,5 +1,13 @@
 package com.example.jobfinder.entities;
 
-abstract class User {
+public abstract class User {
+    private int ID;
 
+    public int getID() {
+        return ID;
+    }
+
+    public void setID(int ID) {
+        this.ID = ID;
+    }
 }

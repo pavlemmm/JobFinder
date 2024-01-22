@@ -1,6 +1,10 @@
 package com.example.jobfinder.scenes;
 
 import com.example.jobfinder.db.UserCRUD;
+import com.example.jobfinder.entities.Employer;
+import com.example.jobfinder.entities.User;
+import com.example.jobfinder.enums.UserTypes;
+import com.example.jobfinder.util.Session;
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -27,35 +31,57 @@ public class LoginScene extends Application {
         Label l2 = new Label("Password : ");
         TextField tf2 = new PasswordField();
 
-        HBox username = new HBox(l1, tf1);
+        HBox email = new HBox(l1, tf1);
         HBox pass = new HBox(l2, tf2);
 
         Button login = new Button("Login");
+        Button register = new Button("Register");
         Button exit = new Button("Exit");
 
         Label badCredentials = new Label("Incorrect login credentials! Try again!");
         badCredentials.setVisible(false);
 
-        HBox buttons = new HBox(login, exit);
-        VBox v = new VBox(log, username, pass, buttons, badCredentials);
+        HBox buttons = new HBox(login, register, exit);
+        VBox v = new VBox(log, email, pass, buttons, badCredentials);
 
-        Scene scene = new Scene(v, 320, 240);
-
-
+        // Exit from app
         exit.setOnAction(e -> {
             System.exit(0);
         });
 
+        // Login to dashboard
         login.setOnAction(e -> {
             try {
                 String emailText = tf1.getText();
                 String passwordText = tf2.getText();
-                UserCRUD.readLoggedUser(emailText, passwordText);
+                User user = UserCRUD.readLoggedUser(emailText, passwordText);
+                if(user != null) {
+                    Session.setUser(user);
+                    stage.close();
+                    if(user instanceof Employer) {
+                        Session.setUserType(UserTypes.Employer);
+                        new DashboardEmployerScene().start(stage);
+                    }
+                    else {
+                        Session.setUserType(UserTypes.Employee);
+                        new DashboardEmployeeScene().start(stage);
+                    }
+                }
+                else {
+                    badCredentials.setVisible(true);
+                }
             } catch (SQLException | NullPointerException exc) {
                 badCredentials.setVisible(true);
             }
 
         });
+
+        register.setOnAction(e -> {
+            stage.close();
+            new RegisterScene().start(stage);
+        });
+
+        Scene scene = new Scene(v, 320, 240);
 
         stage.setTitle("JobFinder - Login");
         stage.getIcons().add(new Image("file:icon.png"));

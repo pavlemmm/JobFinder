@@ -4,27 +4,29 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1f05319a-41a9-4b1d-a298-ea033e00dd13" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mvnw" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mvnw.cmd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/jobfinder/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/jobfinder/db/DBCon.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/jobfinder/db/UserCRUD.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/jobfinder/entities/Employee.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/jobfinder/entities/Employer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/jobfinder/entities/User.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/jobfinder/scenes/LoginScene.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/jobfinder/scenes/MenuScene.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
+    <list default="true" id="1f05319a-41a9-4b1d-a298-ea033e00dd13" name="Changes" comment="Initial commit">
+      <change afterPath="$PROJECT_DIR$/icons/jobs.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/icons/logout.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/icons/message.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/jobfinder/db/JobCRUD.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/jobfinder/entities/Job.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/jobfinder/enums/JobState.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/jobfinder/enums/UserTypes.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/jobfinder/scenes/DashboardEmployeeScene.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/jobfinder/scenes/DashboardEmployerScene.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/jobfinder/scenes/RegisterScene.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/jobfinder/util/Session.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/jobfinder/util/UIUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/jobfinder/util/Validation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/jobfinder/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/jobfinder/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/jobfinder/db/UserCRUD.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/jobfinder/db/UserCRUD.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/jobfinder/entities/Employee.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/jobfinder/entities/Employee.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/jobfinder/entities/Employer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/jobfinder/entities/Employer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/jobfinder/entities/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/jobfinder/entities/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/jobfinder/scenes/LoginScene.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/jobfinder/scenes/LoginScene.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/jobfinder/scenes/MenuScene.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,6 +38,7 @@
       <list>
         <option value="JavaFXApplication" />
         <option value="Class" />
+        <option value="Enum" />
       </list>
     </option>
   </component>
@@ -51,19 +54,27 @@
     </option>
   </component>
   <component name="ProjectId" id="2bBkMfrry8fXPJGSl3Ox39cJooJ" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "git-widget-placeholder": "master",
     "last_opened_file_path": "C:/Users/Pavle/Desktop/FAX/CS/Projekat/JobFinder"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.example.jobfinder.scenes" />
+    </key>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -73,6 +84,26 @@
       <option name="presentableId" value="Default" />
       <updated>1705695815870</updated>
     </task>
+    <task id="LOCAL-00001" summary="Initial commit">
+      <created>1705767143366</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1705767143366</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="Initial commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="Initial commit" />
+  </component>
+  <component name="XDebuggerManager">
+    <watches-manager>
+      <configuration name="Application">
+        <watch expression="set.getRow()" language="JAVA" />
+      </configuration>
+    </watches-manager>
   </component>
 </project>
