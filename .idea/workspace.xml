@@ -4,19 +4,27 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1f05319a-41a9-4b1d-a298-ea033e00dd13" name="Changes" comment="22.1.">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/jobfinder/ui_elements/Elements.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/jobfinder/ui_elements/Panes.java" afterDir="false" />
+    <list default="true" id="1f05319a-41a9-4b1d-a298-ea033e00dd13" name="Changes" comment="Changed saving current user method">
+      <change afterPath="$PROJECT_DIR$/icons/delete.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/icons/plus.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/jobfinder/db/MessageCRUD.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/jobfinder/entities/Message.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/jobfinder/scenes/MessagesScene.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/jobfinder/ui_elements/ElementsEmployee.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/jobfinder/ui_elements/ElementsEmployer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/jobfinder/ui_elements/PanesEmployer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/jobfinder/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/jobfinder/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/jobfinder/db/JobCRUD.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/jobfinder/db/JobCRUD.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/jobfinder/db/UserCRUD.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/jobfinder/db/UserCRUD.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/jobfinder/scenes/DashboardEmployeeScene.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/jobfinder/scenes/DashboardEmployeeScene.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/jobfinder/scenes/DashboardEmployerScene.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/jobfinder/scenes/DashboardEmployerScene.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/jobfinder/entities/Job.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/jobfinder/entities/Job.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/jobfinder/enums/JobState.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/jobfinder/scenes/DashboardEmployeeScene.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/jobfinder/scenes/DashboardEmployerScene.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/jobfinder/scenes/DashboardScene.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/jobfinder/scenes/LoginScene.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/jobfinder/scenes/LoginScene.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/jobfinder/scenes/RegisterScene.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/jobfinder/scenes/RegisterScene.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/jobfinder/util/Session.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/jobfinder/util/Session.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/jobfinder/util/UIUtil.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/jobfinder/ui_elements/Elements.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/jobfinder/ui_elements/Elements.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/jobfinder/ui_elements/Panes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/jobfinder/ui_elements/PanesEmployee.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,15 +59,15 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "master",
-    "last_opened_file_path": "C:/Users/Pavle/Desktop/FAX/CS/Projekat/JobFinder"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Pavle/Desktop/FAX/CS/Projekat/JobFinder&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.example.jobfinder.scenes" />
@@ -88,14 +96,22 @@
       <option name="project" value="LOCAL" />
       <updated>1705954380971</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Changed saving current user method">
+      <created>1705964296671</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1705964296671</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="Initial commit" />
     <MESSAGE value="22.1." />
-    <option name="LAST_COMMIT_MESSAGE" value="22.1." />
+    <MESSAGE value="Changed saving current user method" />
+    <option name="LAST_COMMIT_MESSAGE" value="Changed saving current user method" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>

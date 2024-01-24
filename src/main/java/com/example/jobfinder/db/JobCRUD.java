@@ -2,7 +2,6 @@ package com.example.jobfinder.db;
 
 import com.example.jobfinder.entities.Employee;
 import com.example.jobfinder.entities.Job;
-import com.example.jobfinder.enums.JobState;
 import com.example.jobfinder.util.Session;
 
 import java.sql.PreparedStatement;
@@ -31,7 +30,7 @@ public class JobCRUD {
                 String description = set.getString("description");
                 double payout = set.getDouble("payout");
                 String state = set.getString("state");
-                jobs.add(new Job(ID, Employer_ID, Employee_ID, title, description, payout, JobState.valueOf(state)));
+                jobs.add(new Job(ID, Employer_ID, Employee_ID, title, description, payout, state));
             }
 
             DBCon.closeConnection();
@@ -48,7 +47,7 @@ public class JobCRUD {
             DBCon.openConnection();
 
             PreparedStatement stmt;
-            stmt = DBCon.con.prepareStatement("SELECT * FROM Job WHERE Employee_ID = ?");
+            stmt = DBCon.con.prepareStatement("SELECT * FROM Job WHERE Employee_ID = ? AND State != 'Finished'");
             stmt.setInt(1, Session.getEmployee().getID());
             ResultSet set = stmt.executeQuery();
 
@@ -60,7 +59,7 @@ public class JobCRUD {
                 String description = set.getString("description");
                 double payout = set.getDouble("payout");
                 String state = set.getString("state");
-                jobs.add(new Job(ID, Employer_ID, Employee_ID, title, description, payout, JobState.valueOf(state)));
+                jobs.add(new Job(ID, Employer_ID, Employee_ID, title, description, payout, state));
             }
 
             DBCon.closeConnection();
@@ -77,7 +76,7 @@ public class JobCRUD {
             DBCon.openConnection();
 
             PreparedStatement stmt;
-            stmt = DBCon.con.prepareStatement("SELECT * FROM Job WHERE State = \"Active\"");
+            stmt = DBCon.con.prepareStatement("SELECT * FROM Job WHERE State = 'Active'");
             ResultSet set = stmt.executeQuery();
 
             while (set.next()) {
@@ -88,7 +87,7 @@ public class JobCRUD {
                 String description = set.getString("description");
                 double payout = set.getDouble("payout");
                 String state = set.getString("state");
-                jobs.add(new Job(ID, Employer_ID, Employee_ID, title, description, payout, JobState.valueOf(state)));
+                jobs.add(new Job(ID, Employer_ID, Employee_ID, title, description, payout, state));
             }
 
             DBCon.closeConnection();
@@ -104,10 +103,38 @@ public class JobCRUD {
             DBCon.openConnection();
 
             PreparedStatement stmt;
-            stmt = DBCon.con.prepareStatement("UPDATE Job SET Employee_ID = ? WHERE Job_ID = ?");
+            stmt = DBCon.con.prepareStatement("UPDATE Job SET Employee_ID = ?, State = 'In Progress' WHERE Job_ID = ?");
             stmt.setInt(1, Session.getEmployee().getID());
             stmt.setInt(2, jobID);
-            stmt.execute();
+            stmt.executeUpdate();
+            DBCon.closeConnection();
+        } catch (SQLException e) {
+            Logger.getLogger(JobCRUD.class.getName()).log(Level.SEVERE, null, e);
+        }
+    }
+
+    public static void jobDone(int jobID) {
+        try {
+            DBCon.openConnection();
+
+            PreparedStatement stmt;
+            stmt = DBCon.con.prepareStatement("UPDATE Job SET State = 'Finished' WHERE Job_ID = ?");
+            stmt.setInt(1, jobID);
+            stmt.executeUpdate();
+            DBCon.closeConnection();
+        } catch (SQLException e) {
+            Logger.getLogger(JobCRUD.class.getName()).log(Level.SEVERE, null, e);
+        }
+    }
+
+    public static void deleteJob(int jobID) {
+        try {
+            DBCon.openConnection();
+
+            PreparedStatement stmt;
+            stmt = DBCon.con.prepareStatement("DELETE FROM Job WHERE Job_ID = ?");
+            stmt.setInt(1, jobID);
+            stmt.executeUpdate();
             DBCon.closeConnection();
         } catch (SQLException e) {
             Logger.getLogger(JobCRUD.class.getName()).log(Level.SEVERE, null, e);

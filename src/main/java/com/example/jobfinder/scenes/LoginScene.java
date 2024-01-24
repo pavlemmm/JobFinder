@@ -42,8 +42,23 @@ public class LoginScene extends Application {
         Label badCredentials = new Label("Incorrect login credentials! Try again!");
         badCredentials.setVisible(false);
 
+
+        // DEBUG
+        Button quickEmployee = new Button("QUICK EMPLOYEE");
+        quickEmployee.setOnAction(e -> {
+            tf1.setText("pavlemitic@gmail.com");
+            tf2.setText("sifra123");
+        });
+        Button quickEmployer = new Button("QUICK EMPLOYER");
+        quickEmployer.setOnAction(e -> {
+            tf1.setText("google@gmail.com");
+            tf2.setText("sifra123");
+        });
+        HBox debugButtons = new HBox(quickEmployee, quickEmployer);
+
+
         HBox buttons = new HBox(login, register, exit);
-        VBox v = new VBox(log, email, pass, buttons, badCredentials);
+        VBox v = new VBox(log, email, pass, buttons, badCredentials, debugButtons);
 
         // Exit from app
         exit.setOnAction(e -> {
@@ -61,13 +76,12 @@ public class LoginScene extends Application {
                     if(user instanceof Employer) {
                         Session.setEmployer((Employer)user);
                         Session.setUserType(UserTypes.Employer);
-                        new DashboardEmployerScene().start(stage);
                     }
                     else {
                         Session.setEmployee((Employee)user);
                         Session.setUserType(UserTypes.Employee);
-                        new DashboardEmployeeScene().start(stage);
                     }
+                    new DashboardScene().start(stage);
                 }
                 else {
                     badCredentials.setVisible(true);

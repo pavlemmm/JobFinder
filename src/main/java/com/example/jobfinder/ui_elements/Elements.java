@@ -1,18 +1,17 @@
 package com.example.jobfinder.ui_elements;
 
-import com.example.jobfinder.db.JobCRUD;
-import com.example.jobfinder.entities.Employee;
+import com.example.jobfinder.db.MessageCRUD;
 import com.example.jobfinder.entities.Job;
-import com.example.jobfinder.util.Session;
+import com.example.jobfinder.entities.Message;
+import com.example.jobfinder.enums.UserTypes;
 import javafx.geometry.Insets;
-import javafx.geometry.Pos;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
-import javafx.scene.text.Font;
+import javafx.scene.layout.VBox;
 
 public class Elements {
     public static Button buttonWithImage(String imageName) {
@@ -25,63 +24,28 @@ public class Elements {
         return btn;
     }
 
-    public static BorderPane jobOfferEmployee(Job job) {
-        BorderPane bp = new BorderPane();
-        Label title = new Label(job.getTitle());
-        Label payout = new Label(String.valueOf(job.getPayout()));
-        HBox leftHb = new HBox(title, payout);
-        leftHb.setSpacing(5);
-        Button acceptButton = new Button("Accept");
+    public static HBox message(Message message) {
+        HBox hb = new HBox();
+        Label sender = new Label(message.getSender() == UserTypes.Employee ? message.getEmployee().getFirstName() + ": " : message.getEmployer().getCompanyName() + ": ");
+        hb.getChildren().addAll(sender, new Label(message.getText()));
 
-        acceptButton.setOnAction(e -> {
-            JobCRUD.acceptJob(job.getID());
-        });
-
-        bp.setLeft(leftHb);
-        bp.setRight(acceptButton);
-        bp.setPadding(new Insets(8));
-        return bp;
+        return hb;
     }
 
-    public static BorderPane topBarEmployee(BorderPane root) {
-        Employee user = Session.getEmployee();
-
-        BorderPane topBar = new BorderPane();
-
-        Label nameLabel = new Label(user.getFirstName() + " " + user.getLastName());
-
-        Button allBtn = Elements.buttonWithImage("all");
-
-        allBtn.setOnAction(e -> {
-            root.setCenter(Panes.allJobsPaneEmployee());
+    public static HBox messageInput(Job job, VBox messagesList, UserTypes userType) {
+        HBox hb = new HBox();
+        TextField tf = new TextField();
+        Button btn = new Button("Send");
+        tf.setPrefWidth(260);
+        btn.setPrefWidth(60);
+        hb.getChildren().addAll(tf, btn);
+        btn.setOnAction(e -> {
+            MessageCRUD.sendMessage(tf.getText(), job, userType);
+            Message message = new Message( tf.getText(), userType, job.getEmployee(), job.getEmployer());
+            tf.setText("");
+            messagesList.getChildren().add(Elements.message(message));
         });
-
-        Button jobsBtn = Elements.buttonWithImage("jobs");
-
-        jobsBtn.setOnAction(e -> {
-            root.setCenter(Panes.myJobsPane());
-        });
-
-        Button messagesBtn = Elements.buttonWithImage("message");
-
-        messagesBtn.setOnAction(e -> {
-            root.setCenter(Panes.messagesPane());
-        });
-
-        Button logoutBtn = Elements.buttonWithImage("logout");
-
-        logoutBtn.setOnAction(e -> {
-            System.exit(0);
-        });
-
-        HBox iconBar = new HBox(allBtn, jobsBtn, messagesBtn, logoutBtn);
-
-        iconBar.setSpacing(8);
-        iconBar.setAlignment(Pos.CENTER);
-        topBar.setRight(iconBar);
-        topBar.setLeft(nameLabel);
-        topBar.setPadding(new Insets(8));
-
-        return topBar;
+        return hb;
     }
+
 }

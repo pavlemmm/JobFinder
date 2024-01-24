@@ -1,24 +1,30 @@
 package com.example.jobfinder.entities;
 
-import com.example.jobfinder.enums.JobState;
+import com.example.jobfinder.db.JobCRUD;
+import com.example.jobfinder.db.UserCRUD;
 
 public class Job {
     private int ID;
     private int employerID;
     private int employeeID;
+    private Employer employer;
+    private Employee employee;
     private String title;
     private String description;
     private double payout;
-    private JobState state;
+    private String jobState;
 
-    public Job(int ID, int employerID, int employeeID, String title, String description, double payout, JobState state) {
+    public Job(int ID, int employerID, int employeeID, String title, String description, double payout, String jobState) {
         this.ID = ID;
         this.employerID = employerID;
         this.employeeID = employeeID;
         this.title = title;
         this.description = description;
         this.payout = payout;
-        this.state = state;
+        this.jobState = jobState;
+
+        this.employer = UserCRUD.getEmployerByID(employerID);
+        this.employee = UserCRUD.getEmployeeByID(employeeID);
     }
 
     public int getID() {
@@ -69,11 +75,27 @@ public class Job {
         this.payout = payout;
     }
 
-    public JobState getState() {
-        return state;
+    public Employer getEmployer() {
+        return employer;
     }
 
-    public void setState(JobState state) {
-        this.state = state;
+    public void setEmployer(Employer employer) {
+        this.employer = employer;
+    }
+
+    public Employee getEmployee() {
+        return employee;
+    }
+
+    public void setEmployee(Employee employee) {
+        this.employee = employee;
+    }
+
+    public String getJobState() {
+        return jobState;
+    }
+
+    public void setJobState(String jobState) {
+        this.jobState = jobState;
     }
 }

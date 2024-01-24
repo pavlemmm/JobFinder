@@ -116,7 +116,7 @@ public class RegisterScene extends Application {
                 Session.setUserType(UserTypes.Employee);
 
                 stage.close();
-                new DashboardEmployeeScene().start(stage);
+                new DashboardScene().start(stage);
 
             } catch (SQLException | NullPointerException exc) {
                 Logger.getLogger(RegisterScene.class.getName()).log(Level.SEVERE, null, exc);
@@ -196,7 +196,7 @@ public class RegisterScene extends Application {
                 Session.setUserType(UserTypes.Employer);
 
                 stage.close();
-                new DashboardEmployerScene().start(stage);
+                new DashboardScene().start(stage);
 
             } catch (SQLException | NullPointerException exc) {
                 Logger.getLogger(RegisterScene.class.getName()).log(Level.SEVERE, null, exc);

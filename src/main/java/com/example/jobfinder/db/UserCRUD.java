@@ -10,6 +10,8 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class UserCRUD {
     /**
@@ -35,7 +37,6 @@ public class UserCRUD {
             user.setFirstName(set.getString("First_Name"));
             user.setLastName(set.getString("Last_Name"));
             user.setEmail(set.getString("Email"));
-            user.setJobID(set.getInt("Job_ID"));
 
             DBCon.closeConnection();
             return user;
@@ -161,21 +162,68 @@ public class UserCRUD {
     /**
      * Method for deleting current user
      *
-     * @throws SQLException - throws sql exception
      */
-    public static void deleteCurrentUser() throws SQLException {
-        DBCon.openConnection();
+    public static void deleteCurrentUser() {
+        try {
+            DBCon.openConnection();
 
-        PreparedStatement stmt;
-        if(Session.getUserType() == UserTypes.Employee) {
-            stmt = DBCon.con.prepareStatement("DELETE FROM Employee WHERE Employee_ID = ?");
-            stmt.setInt(1, Session.getEmployee().getID());
-        } else {
-            stmt = DBCon.con.prepareStatement("DELETE FROM Employer WHERE Employer_ID = ?");
-            stmt.setInt(1, Session.getEmployer().getID());
+            PreparedStatement stmt;
+            if(Session.getUserType() == UserTypes.Employee) {
+                stmt = DBCon.con.prepareStatement("DELETE FROM Employee WHERE Employee_ID = ?");
+                stmt.setInt(1, Session.getEmployee().getID());
+            } else {
+                stmt = DBCon.con.prepareStatement("DELETE FROM Employer WHERE Employer_ID = ?");
+                stmt.setInt(1, Session.getEmployer().getID());
+            }
+            stmt.execute();
+
+            DBCon.closeConnection();
+        } catch (SQLException e) {
+            Logger.getLogger(UserCRUD.class.getName()).log(Level.SEVERE, null, e);
         }
-        stmt.execute();
+    }
 
-        DBCon.closeConnection();
+    public static Employer getEmployerByID(int employerID) {
+        Employer user = new Employer();
+        try {
+            DBCon.openConnection();
+
+            PreparedStatement stmt = DBCon.con.prepareStatement("SELECT * FROM Employer WHERE Employer_ID = ?");
+            stmt.setInt(1, employerID);
+            ResultSet set = stmt.executeQuery();
+
+            if (set.next()) {
+
+                user.setID(employerID);
+                user.setCompanyName(set.getString("Company_Name"));
+                user.setEmail(set.getString("Email"));
+            }
+            DBCon.closeConnection();
+        } catch (SQLException e) {
+            Logger.getLogger(UserCRUD.class.getName()).log(Level.SEVERE, null, e);
+        }
+        return user;
+    }
+
+    public static Employee getEmployeeByID(int employeeID) {
+        Employee user = new Employee();
+        try {
+            DBCon.openConnection();
+
+            PreparedStatement stmt = DBCon.con.prepareStatement("SELECT * FROM Employee WHERE Employee_ID = ?");
+            stmt.setInt(1, employeeID);
+            ResultSet set = stmt.executeQuery();
+
+            if (set.next()) {
+                user.setID(employeeID);
+                user.setFirstName(set.getString("First_Name"));
+                user.setLastName(set.getString("Last_Name"));
+                user.setEmail(set.getString("Email"));
+            }
+            DBCon.closeConnection();
+        } catch (SQLException e) {
+            Logger.getLogger(UserCRUD.class.getName()).log(Level.SEVERE, null, e);
+        }
+        return user;
     }
 }
