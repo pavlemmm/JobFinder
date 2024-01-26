@@ -1,5 +1,6 @@
 package com.example.jobfinder.entities;
 
+import com.example.jobfinder.db.FileCRUD;
 import com.example.jobfinder.db.UserCRUD;
 import com.example.jobfinder.enums.UserTypes;
 
@@ -14,9 +15,9 @@ public class Message {
     private int jobID;
     private String text;
     private UserTypes sender;
-    private String file;
+    private String filePath = "";
 
-    public Message(int messageID, String text, UserTypes sender, int employerID, int employeeID) {
+    public Message(int messageID, String text, UserTypes sender, int employerID, int employeeID, int file_id) {
         this.messageID = messageID;
         this.text = text;
         this.sender = sender;
@@ -25,13 +26,15 @@ public class Message {
 
         employee = UserCRUD.getEmployeeByID(employeeID);
         employer = UserCRUD.getEmployerByID(employerID);
+        filePath = file_id == 0 ? "" : FileCRUD.getFilePath(file_id);
     }
 
-    public Message(String text, UserTypes sender, Employee employee, Employer employer) {
+    public Message(String text, UserTypes sender, Employee employee, Employer employer, String filePath) {
         this.text = text;
         this.sender = sender;
         this.employee = employee;
         this.employer = employer;
+        this.filePath = filePath;
     }
 
     public int getMessageID() {
@@ -88,5 +91,9 @@ public class Message {
 
     public Employer getEmployer() {
         return employer;
+    }
+
+    public String getFilePath() {
+        return filePath;
     }
 }

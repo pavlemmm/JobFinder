@@ -4,6 +4,7 @@ import com.example.jobfinder.db.JobCRUD;
 import com.example.jobfinder.db.MessageCRUD;
 import com.example.jobfinder.entities.Job;
 import com.example.jobfinder.entities.Message;
+import javafx.scene.control.ScrollPane;
 import javafx.scene.layout.VBox;
 
 import java.util.ArrayList;
@@ -31,17 +32,5 @@ public class PanesEmployee {
         }
 
         return jobsList;
-    }
-
-    public static VBox messagesPane(Job job) {
-        VBox messagesList = new VBox();
-
-        ArrayList<Message> messages = MessageCRUD.getAllMessagesFromJob(job.getID());
-
-        for (Message message : messages) {
-            messagesList.getChildren().add(Elements.message(message));
-        }
-
-        return messagesList;
     }
 }

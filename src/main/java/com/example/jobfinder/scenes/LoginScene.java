@@ -7,6 +7,7 @@ import com.example.jobfinder.entities.User;
 import com.example.jobfinder.enums.UserTypes;
 import com.example.jobfinder.util.Session;
 import javafx.application.Application;
+import javafx.geometry.Insets;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -24,7 +25,8 @@ public class LoginScene extends Application {
 
     @Override
     public void start(Stage stage) {
-        Label log = new Label("LOGIN");
+        Label log = new Label("Login");
+        log.setPadding(new Insets(5));
 
         Label l1 = new Label("Email : ");
         TextField tf1 = new TextField();
@@ -58,7 +60,10 @@ public class LoginScene extends Application {
 
 
         HBox buttons = new HBox(login, register, exit);
+        buttons.setSpacing(4);
         VBox v = new VBox(log, email, pass, buttons, badCredentials, debugButtons);
+        v.setPadding(new Insets(4));
+        v.setSpacing(4);
 
         // Exit from app
         exit.setOnAction(e -> {

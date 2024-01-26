@@ -39,12 +39,34 @@ public class Validation {
 
     public static boolean isPasswordValid(String password) {
         // Compile the regex pattern
-        Pattern pattern = Pattern.compile(".{3,32}");
+        Pattern pattern = Pattern.compile("^.{3,32}$");
 
         // Create a Matcher object
         Matcher matcher = pattern.matcher(password);
 
         // Return true if the email matches the pattern, otherwise false
         return matcher.matches();
+    }
+
+    public static int isNumberValid(String num) {
+        Pattern pattern = Pattern.compile("^\\d+$");
+
+        // Create a Matcher object
+        Matcher matcher = pattern.matcher(num);
+
+        if(!matcher.matches()) return -1;
+
+        int numVal = Integer.parseInt(num);
+
+        if(numVal < 0) {
+            return -1;
+        }
+
+        if(numVal > 999999) {
+            return -1;
+        }
+
+        // Return true if the email matches the pattern, otherwise false
+        return numVal;
     }
 }

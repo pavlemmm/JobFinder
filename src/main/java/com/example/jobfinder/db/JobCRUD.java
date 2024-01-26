@@ -134,7 +134,24 @@ public class JobCRUD {
             PreparedStatement stmt;
             stmt = DBCon.con.prepareStatement("DELETE FROM Job WHERE Job_ID = ?");
             stmt.setInt(1, jobID);
-            stmt.executeUpdate();
+            stmt.execute();
+            DBCon.closeConnection();
+        } catch (SQLException e) {
+            Logger.getLogger(JobCRUD.class.getName()).log(Level.SEVERE, null, e);
+        }
+    }
+
+    public static void createJob(int employerID, String titleText, String descriptionText, int payoutVal) {
+        try {
+            DBCon.openConnection();
+
+            PreparedStatement stmt;
+            stmt = DBCon.con.prepareStatement("INSERT INTO Job(Employer_ID, Title, Description, Payout) VALUES(?, ?, ?, ?)");
+            stmt.setInt(1, employerID);
+            stmt.setString(2, titleText);
+            stmt.setString(3, descriptionText);
+            stmt.setInt(4, payoutVal);
+            stmt.execute();
             DBCon.closeConnection();
         } catch (SQLException e) {
             Logger.getLogger(JobCRUD.class.getName()).log(Level.SEVERE, null, e);

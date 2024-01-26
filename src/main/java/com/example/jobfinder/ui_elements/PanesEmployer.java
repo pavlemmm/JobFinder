@@ -2,8 +2,12 @@ package com.example.jobfinder.ui_elements;
 
 import com.example.jobfinder.db.JobCRUD;
 import com.example.jobfinder.db.MessageCRUD;
-import com.example.jobfinder.entities.Job;
-import com.example.jobfinder.entities.Message;
+import com.example.jobfinder.db.UserCRUD;
+import com.example.jobfinder.entities.*;
+import com.example.jobfinder.enums.UserTypes;
+import com.example.jobfinder.scenes.DashboardScene;
+import com.example.jobfinder.util.Session;
+import com.example.jobfinder.util.Validation;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.control.*;
@@ -11,6 +15,7 @@ import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 
+import java.sql.SQLException;
 import java.util.ArrayList;
 
 public class PanesEmployer {
@@ -26,18 +31,6 @@ public class PanesEmployer {
         return jobsList;
     }
 
-    public static VBox messagesPane(Job job) {
-        VBox messagesList = new VBox();
-
-        ArrayList<Message> messages = MessageCRUD.getAllMessagesFromJob(job.getID());
-
-        for (Message message : messages) {
-            messagesList.getChildren().add(Elements.message(message));
-        }
-
-        return messagesList;
-    }
-
     public static BorderPane addNewJobPane() {
         BorderPane bp = new BorderPane();
 
@@ -49,14 +42,35 @@ public class PanesEmployer {
         Label l2 = new Label("Description : ");
         TextArea ta1 = new TextArea();
 
+        Label l3 = new Label("Payout : ");
+        TextField tf2 = new TextField();
+
         HBox title = new HBox(l1, tf1);
         HBox desc = new HBox(l2, ta1);
+        HBox payout = new HBox(l3, tf2);
+
+        Label badCredentials = new Label("Incorrect values! Try again!");
+        badCredentials.setVisible(false);
 
         Button post = new Button("Post");
         post.setPadding(new Insets(6));
         post.setPrefWidth(780);
 
-        VBox v = new VBox(title, desc);
+        post.setOnAction(e -> {
+            String titleText = tf1.getText();
+            String descriptionText = ta1.getText();
+            int payoutVal = Validation.isNumberValid(tf2.getText());
+            if(payoutVal == -1) {
+                badCredentials.setVisible(true);
+                return;
+            }
+            JobCRUD.createJob(Session.getEmployer().getID(), titleText, descriptionText, payoutVal);
+            tf1.setText("");
+            ta1.setText("");
+            tf2.setText("");
+        });
+
+        VBox v = new VBox(title, desc, payout, badCredentials);
         v.setSpacing(10);
         v.setPadding(new Insets(20));
 

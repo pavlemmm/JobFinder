@@ -5,6 +5,7 @@ import com.example.jobfinder.enums.UserTypes;
 import com.example.jobfinder.util.Session;
 import com.example.jobfinder.util.Validation;
 import javafx.application.Application;
+import javafx.geometry.Insets;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.image.Image;
@@ -42,6 +43,7 @@ public class RegisterScene extends Application {
 
         // Tab 1
         Label title = new Label("Register as Employee");
+        title.setPadding(new Insets(8));
 
         Label l1 = new Label("Email : ");
         TextField tf1 = new TextField();
@@ -67,7 +69,10 @@ public class RegisterScene extends Application {
         Button exit = new Button("Exit");
 
         HBox buttons = new HBox(register, login, exit);
+        buttons.setSpacing(4);
         VBox v = new VBox(title, name, lastName, email, pass, buttons, badCredentials);
+        v.setPadding(new Insets(4));
+        v.setSpacing(4);
 
         tab.setContent(v);
 
@@ -132,7 +137,7 @@ public class RegisterScene extends Application {
 
         // Tab 2
         Label title = new Label("Register as Employer");
-
+        title.setPadding(new Insets(8));
         Label l1 = new Label("Email : ");
         TextField tf1 = new TextField();
 
@@ -153,7 +158,10 @@ public class RegisterScene extends Application {
         Button exit = new Button("Exit");
 
         HBox buttons = new HBox(register, login, exit);
+        buttons.setSpacing(4);
         VBox v = new VBox(title, companyName, email, pass, buttons, badCredentials);
+        v.setPadding(new Insets(4));
+        v.setSpacing(4);
 
         tab.setContent(v);
 
