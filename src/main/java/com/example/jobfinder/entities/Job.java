@@ -98,4 +98,9 @@ public class Job {
     public void setJobState(String jobState) {
         this.jobState = jobState;
     }
+
+    @Override
+    public String toString() {
+        return "Job{" + "ID=" + ID + ", title=" + title + ", description=" + description + ", payout=" + payout +  ", jobState=" + jobState + '}';
+    }
 }

@@ -37,4 +37,8 @@ public class Employee extends User {
     public void setJobID(int jobID) {
         this.jobID = jobID;
     }
+    @Override
+    public String toString() {
+        return "Employee{" + "firstName=" + firstName + ", lastName=" + lastName + ", email=" + email + ", jobID=" + jobID + '}';
+    }
 }

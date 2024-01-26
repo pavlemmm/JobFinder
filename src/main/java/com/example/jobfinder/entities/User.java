@@ -10,4 +10,9 @@ public abstract class User {
     public void setID(int ID) {
         this.ID = ID;
     }
+
+    @Override
+    public String toString() {
+        return "User{" + "ID=" + ID + '}';
+    }
 }

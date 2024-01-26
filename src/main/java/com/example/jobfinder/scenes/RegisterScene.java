@@ -1,7 +1,10 @@
 package com.example.jobfinder.scenes;
 
 import com.example.jobfinder.db.UserCRUD;
+import com.example.jobfinder.entities.Employee;
+import com.example.jobfinder.entities.User;
 import com.example.jobfinder.enums.UserTypes;
+import com.example.jobfinder.exceptions.*;
 import com.example.jobfinder.util.Session;
 import com.example.jobfinder.util.Validation;
 import javafx.application.Application;
@@ -93,28 +96,23 @@ public class RegisterScene extends Application {
                 String lastNameText = tf4.getText();
 
                 if (!Validation.isEmailValid(emailText)) {
-                    badCredentials.setText("Email is not valid!");
-                    return;
+                    throw new EmailNotValidException("Email is not valid!");
                 }
 
                 if (!UserCRUD.checkIfEmailAvailable(emailText)) {
-                    badCredentials.setText("Email is already taken!");
-                    return;
+                    throw new EmailNotValidException("Email is already taken!");
                 }
 
                 if (!Validation.isNameValid(firstNameText)) {
-                    badCredentials.setText("First Name is not valid, it shouldn't have more than 32 characters and should only contain letters!");
-                    return;
+                    throw new FirstNameNotValidException("First Name is not valid, it shouldn't have more than 32 characters and should only contain letters!");
                 }
 
                 if (!Validation.isNameValid(lastNameText)) {
-                    badCredentials.setText("Last Name is not valid, it shouldn't have more than 32 characters and should only contain letters!");
-                    return;
+                    throw new LastNameNotValidException("Last Name is not valid, it shouldn't have more than 32 characters and should only contain letters!");
                 }
 
                 if (!Validation.isPasswordValid(passwordText)) {
-                    badCredentials.setText("Password is not valid, it should be between 8 and 32 characters!");
-                    return;
+                    throw new PasswordNotValidException("Password is not valid, it should be between 8 and 32 characters!");
                 }
 
                 Session.setEmployee(UserCRUD.registerEmployee(emailText, passwordText, firstNameText, lastNameText));
@@ -125,6 +123,8 @@ public class RegisterScene extends Application {
 
             } catch (SQLException | NullPointerException exc) {
                 Logger.getLogger(RegisterScene.class.getName()).log(Level.SEVERE, null, exc);
+            } catch (UserNotValidException exc) {
+                badCredentials.setText(exc.getMessage());
             }
         });
 

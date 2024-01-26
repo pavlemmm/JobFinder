@@ -4,19 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1f05319a-41a9-4b1d-a298-ea033e00dd13" name="Changes" comment="Added message functionality">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/jobfinder/db/FileCRUD.java" afterDir="false" />
+    <list default="true" id="1f05319a-41a9-4b1d-a298-ea033e00dd13" name="Changes" comment="Added send files through messages functionality">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/jobfinder/exceptions/CompanyNameNotValidException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/jobfinder/exceptions/EmailNotValidException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/jobfinder/exceptions/FirstNameNotValidException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/jobfinder/exceptions/LastNameNotValidException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/jobfinder/exceptions/PasswordNotValidException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/jobfinder/exceptions/UserNotValidException.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/jobfinder/db/JobCRUD.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/jobfinder/db/JobCRUD.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/jobfinder/db/MessageCRUD.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/jobfinder/db/MessageCRUD.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/jobfinder/entities/Employee.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/jobfinder/entities/Employee.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/jobfinder/entities/Employer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/jobfinder/entities/Employer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/jobfinder/entities/Job.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/jobfinder/entities/Job.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/jobfinder/entities/Message.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/jobfinder/entities/Message.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/jobfinder/scenes/LoginScene.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/jobfinder/scenes/LoginScene.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/jobfinder/scenes/MessagesScene.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/jobfinder/scenes/MessagesScene.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/jobfinder/entities/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/jobfinder/entities/User.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/jobfinder/scenes/RegisterScene.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/jobfinder/scenes/RegisterScene.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/jobfinder/ui_elements/Elements.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/jobfinder/ui_elements/Elements.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/jobfinder/ui_elements/PanesEmployee.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/jobfinder/ui_elements/PanesEmployee.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/jobfinder/ui_elements/PanesEmployer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/jobfinder/ui_elements/PanesEmployer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/jobfinder/util/Validation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/jobfinder/util/Validation.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,7 +62,11 @@
   }
 }]]></component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Pavle\Desktop\FAX\CS\Projekat\JobFinder\src\main\java\com\example\jobfinder" />
+    </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.example.jobfinder.exceptions" />
       <recent name="com.example.jobfinder.scenes" />
     </key>
   </component>
@@ -102,7 +107,14 @@
       <option name="project" value="LOCAL" />
       <updated>1706123554130</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Added send files through messages functionality">
+      <created>1706295856328</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1706295856329</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -111,7 +123,8 @@
     <MESSAGE value="22.1." />
     <MESSAGE value="Changed saving current user method" />
     <MESSAGE value="Added message functionality" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added message functionality" />
+    <MESSAGE value="Added send files through messages functionality" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added send files through messages functionality" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>

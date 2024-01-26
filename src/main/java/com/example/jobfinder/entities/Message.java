@@ -96,4 +96,9 @@ public class Message {
     public String getFilePath() {
         return filePath;
     }
+
+    @Override
+    public String toString() {
+        return "Message{" + "messageID=" + messageID + ", text=" + text + ", employerID=" + employerID + ", employeeID=" + employeeID + '}';
+    }
 }
