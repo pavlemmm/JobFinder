@@ -14,6 +14,7 @@ import javafx.scene.control.*;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
+import javafx.scene.text.Font;
 
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -35,6 +36,7 @@ public class PanesEmployer {
         BorderPane bp = new BorderPane();
 
         Label log = new Label("Add new job");
+        log.setFont(new Font(14));
 
         Label l1 = new Label("Title : ");
         TextField tf1 = new TextField();

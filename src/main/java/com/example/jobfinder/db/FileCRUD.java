@@ -13,6 +13,13 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public class FileCRUD {
+    /**
+     * Create new file
+     *
+     * @throws SQLException - throws sql exception
+     * @param filePath - Path to the file
+     * @return - returns fileID
+     */
     public static int createFile(String filePath) throws SQLException {
         DBCon.openConnection();
 
@@ -29,6 +36,12 @@ public class FileCRUD {
         return fileID;
     }
 
+    /**
+     * Get File Path by fileID
+     *
+     * @param fileID - File ID
+     * @return - returns filePath
+     */
     public static String getFilePath(int fileID) {
         String filePath = "";
         try {

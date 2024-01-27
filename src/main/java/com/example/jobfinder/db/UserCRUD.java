@@ -183,6 +183,12 @@ public class UserCRUD {
         }
     }
 
+    /**
+     * Get employer by ID
+     *
+     * @param employerID - Employer ID
+     * @return - Returns Employer
+     */
     public static Employer getEmployerByID(int employerID) {
         Employer user = new Employer();
         try {
@@ -205,6 +211,12 @@ public class UserCRUD {
         return user;
     }
 
+    /**
+     * Get employee by ID
+     *
+     * @param employeeID - Employer ID
+     * @return - Returns Employee
+     */
     public static Employee getEmployeeByID(int employeeID) {
         Employee user = new Employee();
         try {

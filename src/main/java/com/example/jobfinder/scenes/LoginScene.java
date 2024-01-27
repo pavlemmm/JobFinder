@@ -14,8 +14,10 @@ import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
+import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
+import javafx.scene.text.Font;
 import javafx.stage.Stage;
 
 import java.sql.SQLException;
@@ -27,6 +29,7 @@ public class LoginScene extends Application {
     public void start(Stage stage) {
         Label log = new Label("Login");
         log.setPadding(new Insets(5));
+        log.setFont(new Font(15));
 
         Label l1 = new Label("Email : ");
         TextField tf1 = new TextField();
@@ -40,6 +43,7 @@ public class LoginScene extends Application {
         Button login = new Button("Login");
         Button register = new Button("Register");
         Button exit = new Button("Exit");
+        Button info = new Button("?");
 
         Label badCredentials = new Label("Incorrect login credentials! Try again!");
         badCredentials.setVisible(false);
@@ -59,11 +63,16 @@ public class LoginScene extends Application {
         HBox debugButtons = new HBox(quickEmployee, quickEmployer);
 
 
-        HBox buttons = new HBox(login, register, exit);
-        buttons.setSpacing(4);
-        VBox v = new VBox(log, email, pass, buttons, badCredentials, debugButtons);
+        HBox buttons = new HBox(login, register, exit, info);
+        buttons.setPadding(new Insets(4));
+        buttons.setSpacing(3);
+        VBox v = new VBox(log, email, pass, badCredentials, debugButtons);
         v.setPadding(new Insets(4));
         v.setSpacing(4);
+
+        BorderPane bp = new BorderPane();
+        bp.setCenter(v);
+        bp.setBottom(buttons);
 
         // Exit from app
         exit.setOnAction(e -> {
@@ -102,7 +111,11 @@ public class LoginScene extends Application {
             new RegisterScene().start(stage);
         });
 
-        Scene scene = new Scene(v, 320, 240);
+        info.setOnAction(e -> {
+            new InfoScene();
+        });
+
+        Scene scene = new Scene(bp, 320, 240);
 
         stage.setTitle("JobFinder - Login");
         stage.getIcons().add(new Image("file:icon.png"));

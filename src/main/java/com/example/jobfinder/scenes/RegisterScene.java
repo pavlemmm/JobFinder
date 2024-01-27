@@ -15,6 +15,7 @@ import javafx.scene.image.Image;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
+import javafx.scene.text.Font;
 import javafx.stage.Stage;
 
 import java.sql.SQLException;
@@ -32,7 +33,7 @@ public class RegisterScene extends Application {
 
 
 
-        Scene scene = new Scene(root, 320, 240);
+        Scene scene = new Scene(root, 320, 300);
         stage.setTitle("JobFinder - Register");
         stage.getIcons().add(new Image("file:icon.png"));
         stage.setResizable(false);
@@ -47,6 +48,7 @@ public class RegisterScene extends Application {
         // Tab 1
         Label title = new Label("Register as Employee");
         title.setPadding(new Insets(8));
+        title.setFont(new Font(15));
 
         Label l1 = new Label("Email : ");
         TextField tf1 = new TextField();
@@ -72,12 +74,17 @@ public class RegisterScene extends Application {
         Button exit = new Button("Exit");
 
         HBox buttons = new HBox(register, login, exit);
-        buttons.setSpacing(4);
-        VBox v = new VBox(title, name, lastName, email, pass, buttons, badCredentials);
+        buttons.setSpacing(3);
+        buttons.setPadding(new Insets(4));
+        VBox v = new VBox(title, name, lastName, email, pass, badCredentials);
         v.setPadding(new Insets(4));
         v.setSpacing(4);
 
-        tab.setContent(v);
+        BorderPane bp = new BorderPane();
+        bp.setCenter(v);
+        bp.setBottom(buttons);
+
+        tab.setContent(bp);
 
         exit.setOnAction(e -> {
             System.exit(0);
@@ -138,6 +145,8 @@ public class RegisterScene extends Application {
         // Tab 2
         Label title = new Label("Register as Employer");
         title.setPadding(new Insets(8));
+        title.setFont(new Font(15));
+
         Label l1 = new Label("Email : ");
         TextField tf1 = new TextField();
 
@@ -158,12 +167,17 @@ public class RegisterScene extends Application {
         Button exit = new Button("Exit");
 
         HBox buttons = new HBox(register, login, exit);
-        buttons.setSpacing(4);
-        VBox v = new VBox(title, companyName, email, pass, buttons, badCredentials);
+        buttons.setSpacing(3);
+        buttons.setPadding(new Insets(4));
+        VBox v = new VBox(title, companyName, email, pass, badCredentials);
         v.setPadding(new Insets(4));
         v.setSpacing(4);
 
-        tab.setContent(v);
+        BorderPane bp = new BorderPane();
+        bp.setCenter(v);
+        bp.setBottom(buttons);
+
+        tab.setContent(bp);
 
         exit.setOnAction(e -> {
             System.exit(0);

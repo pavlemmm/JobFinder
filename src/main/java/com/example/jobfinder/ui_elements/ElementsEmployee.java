@@ -16,14 +16,17 @@ import javafx.scene.control.*;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
+import javafx.scene.text.Font;
 import javafx.stage.Stage;
 
 public class ElementsEmployee {
     public static BorderPane jobOffer(Job job) {
         BorderPane bp = new BorderPane();
         Label title = new Label(job.getTitle());
+        title.setFont(new Font(14));
         Label employer = new Label(job.getEmployer().getCompanyName());
-        Label payout = new Label(String.valueOf(job.getPayout()));
+        Label description = new Label(job.getDescription());
+        Label payout = new Label("Payout: " + String.valueOf(job.getPayout()));
 
         Button acceptButton = new Button("Accept");
         acceptButton.setPadding(new Insets(6));
@@ -37,8 +40,9 @@ public class ElementsEmployee {
         VBox v = new VBox(title, employer);
         v.setAlignment(Pos.CENTER_LEFT);
 
-        HBox leftHb = new HBox(v, payout);
-        leftHb.setSpacing(5);
+        HBox leftHb = new HBox(v, description, payout);
+        leftHb.setAlignment(Pos.CENTER);
+        leftHb.setSpacing(25);
         HBox rightHb = new HBox(acceptButton);
         rightHb.setSpacing(5);
 
@@ -51,8 +55,11 @@ public class ElementsEmployee {
     public static BorderPane myJob(Job job) {
         BorderPane bp = new BorderPane();
         Label title = new Label(job.getTitle());
+        title.setFont(new Font(14));
         Label employer = new Label(job.getEmployer().getCompanyName());
-        Label payout = new Label(String.valueOf(job.getPayout()));
+        Label description = new Label(job.getDescription());
+        Label payout = new Label("Payout: " + String.valueOf(job.getPayout()));
+
 
         Button messagesBtn = Elements.buttonWithImage("message");
         Button doneButton = new Button("Done");
@@ -71,8 +78,9 @@ public class ElementsEmployee {
         VBox v = new VBox(title, employer);
         v.setAlignment(Pos.CENTER_LEFT);
 
-        HBox leftHb = new HBox(v, payout);
-        leftHb.setSpacing(5);
+        HBox leftHb = new HBox(v, description, payout);
+        leftHb.setSpacing(25);
+        leftHb.setAlignment(Pos.CENTER);
         HBox rightHb = new HBox(messagesBtn, doneButton);
         rightHb.setSpacing(5);
 
@@ -88,6 +96,7 @@ public class ElementsEmployee {
         BorderPane topBar = new BorderPane();
 
         Label nameLabel = new Label(user.getFirstName() + " " + user.getLastName());
+        nameLabel.setFont(new Font(17));
 
         Button allBtn = Elements.buttonWithImage("all");
 

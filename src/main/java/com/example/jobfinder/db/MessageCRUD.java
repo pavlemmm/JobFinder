@@ -14,6 +14,12 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public class MessageCRUD {
+    /**
+     * Get List of Messages by jobID
+     *
+     * @param jobID - Job ID
+     * @return - Returns list of messages
+     */
     public static ArrayList<Message> getAllMessagesFromJob(int jobID) {
         ArrayList<Message> messages = new ArrayList<>();
         try {
@@ -42,6 +48,14 @@ public class MessageCRUD {
         return messages;
     }
 
+    /**
+     * Send message
+     *
+     * @param text - Message text
+     * @param job - Job object
+     * @param sender - Sender type
+     * @param filePath - File path
+     */
     public static void sendMessage(String text, Job job, UserTypes sender, String filePath) {
         try {
             DBCon.openConnection();

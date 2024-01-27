@@ -12,6 +12,11 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public class JobCRUD {
+    /**
+     * Get all jobs as employer
+     *
+     * @return - Get List of jobs
+     */
     public static ArrayList<Job> getJobsAsEmployer() {
         ArrayList<Job> jobs = new ArrayList<>();
         try {
@@ -41,6 +46,11 @@ public class JobCRUD {
         return jobs;
     }
 
+    /**
+     * Get all jobs as employee
+     *
+     * @return - Get List of jobs
+     */
     public static ArrayList<Job> getJobsAsEmployee() {
         ArrayList<Job> jobs = new ArrayList<>();
         try {
@@ -70,6 +80,11 @@ public class JobCRUD {
         return jobs;
     }
 
+    /**
+     * Get all active jobs
+     *
+     * @return - Get List of jobs
+     */
     public static ArrayList<Job> getAllActiveJobs() {
         ArrayList<Job> jobs = new ArrayList<>();
         try {
@@ -98,6 +113,11 @@ public class JobCRUD {
         return jobs;
     }
 
+    /**
+     * Accept job by jobID
+     *
+     * @param jobID - Job ID
+     */
     public static void acceptJob(int jobID) {
         try {
             DBCon.openConnection();
@@ -113,6 +133,11 @@ public class JobCRUD {
         }
     }
 
+    /**
+     * Mark job as done by jobID
+     *
+     * @param jobID - Job ID
+     */
     public static void jobDone(int jobID) {
         try {
             DBCon.openConnection();
@@ -127,6 +152,11 @@ public class JobCRUD {
         }
     }
 
+    /**
+     * Delete job by jobID
+     *
+     * @param jobID - Job ID
+     */
     public static void deleteJob(int jobID) {
         try {
             DBCon.openConnection();
@@ -141,6 +171,14 @@ public class JobCRUD {
         }
     }
 
+    /**
+     * Create new job
+     *
+     * @param employerID - Employer ID
+     * @param titleText - Text for title
+     * @param descriptionText - Text for description
+     * @param payoutVal - Payout value
+     */
     public static void createJob(int employerID, String titleText, String descriptionText, int payoutVal) {
         try {
             DBCon.openConnection();

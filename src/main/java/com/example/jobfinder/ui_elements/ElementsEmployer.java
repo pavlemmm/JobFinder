@@ -18,14 +18,17 @@ import javafx.scene.control.*;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
+import javafx.scene.text.Font;
 import javafx.stage.Stage;
 
 public class ElementsEmployer {
     public static BorderPane myJob(Job job) {
         BorderPane bp = new BorderPane();
         Label title = new Label(job.getTitle());
+        title.setFont(new Font(14));
         Label employer = new Label(job.getEmployer().getCompanyName());
-        Label payout = new Label(String.valueOf(job.getPayout()));
+        Label payout = new Label("Payout: " + String.valueOf(job.getPayout()));
+        Label status = new Label("Status: " + String.valueOf(job.getJobState()));
 
         Button messagesBtn = Elements.buttonWithImage("message");
         Button deleteBtn = new Button("Delete");
@@ -44,8 +47,9 @@ public class ElementsEmployer {
         VBox v = new VBox(title, employer);
         v.setAlignment(Pos.CENTER_LEFT);
 
-        HBox leftHb = new HBox(v, payout);
-        leftHb.setSpacing(5);
+        HBox leftHb = new HBox(v, payout, status);
+        leftHb.setSpacing(25);
+        leftHb.setAlignment(Pos.CENTER);
         HBox rightHb = new HBox(messagesBtn, deleteBtn);
         rightHb.setSpacing(5);
 
@@ -61,6 +65,7 @@ public class ElementsEmployer {
         BorderPane topBar = new BorderPane();
 
         Label nameLabel = new Label(user.getCompanyName());
+        nameLabel.setFont(new Font(17));
 
         Button myJobs = Elements.buttonWithImage("jobs");
 

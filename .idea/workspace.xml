@@ -4,20 +4,22 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1f05319a-41a9-4b1d-a298-ea033e00dd13" name="Changes" comment="Added send files through messages functionality">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/jobfinder/exceptions/CompanyNameNotValidException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/jobfinder/exceptions/EmailNotValidException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/jobfinder/exceptions/FirstNameNotValidException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/jobfinder/exceptions/LastNameNotValidException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/jobfinder/exceptions/PasswordNotValidException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/jobfinder/exceptions/UserNotValidException.java" afterDir="false" />
+    <list default="true" id="1f05319a-41a9-4b1d-a298-ea033e00dd13" name="Changes" comment="Added exceptions and toString() methods">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/jobfinder/scenes/InfoScene.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/jobfinder/test/db/FileCRUDTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/jobfinder/test/db/UserCRUDTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/jobfinder/entities/Employee.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/jobfinder/entities/Employee.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/jobfinder/entities/Employer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/jobfinder/entities/Employer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/jobfinder/entities/Job.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/jobfinder/entities/Job.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/jobfinder/entities/Message.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/jobfinder/entities/Message.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/jobfinder/entities/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/jobfinder/entities/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/jobfinder/db/FileCRUD.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/jobfinder/db/FileCRUD.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/jobfinder/db/JobCRUD.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/jobfinder/db/JobCRUD.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/jobfinder/db/MessageCRUD.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/jobfinder/db/MessageCRUD.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/jobfinder/db/UserCRUD.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/jobfinder/db/UserCRUD.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/jobfinder/scenes/LoginScene.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/jobfinder/scenes/LoginScene.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/jobfinder/scenes/RegisterScene.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/jobfinder/scenes/RegisterScene.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/jobfinder/ui_elements/ElementsEmployee.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/jobfinder/ui_elements/ElementsEmployee.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/jobfinder/ui_elements/ElementsEmployer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/jobfinder/ui_elements/ElementsEmployer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/jobfinder/ui_elements/PanesEmployer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/jobfinder/ui_elements/PanesEmployer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,23 +54,115 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "master",
-    "last_opened_file_path": "C:/Users/Pavle/Desktop/FAX/CS/Projekat/JobFinder/src/main/java/com/example/jobfinder"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Pavle/Desktop/FAX/CS/Projekat/JobFinder&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Pavle\Desktop\FAX\CS\Projekat\JobFinder" />
       <recent name="C:\Users\Pavle\Desktop\FAX\CS\Projekat\JobFinder\src\main\java\com\example\jobfinder" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.example.jobfinder.exceptions" />
       <recent name="com.example.jobfinder.scenes" />
     </key>
+  </component>
+  <component name="RunManager" selected="JUnit.UserCRUDTest.getEmployeeByID">
+    <configuration name="UserCRUDTest.checkIfEmailAvailable" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="JobFinder" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.jobfinder.test.db.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.example.jobfinder.test.db" />
+      <option name="MAIN_CLASS_NAME" value="com.example.jobfinder.test.db.UserCRUDTest" />
+      <option name="METHOD_NAME" value="checkIfEmailAvailable" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UserCRUDTest.getEmployeeByID" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="JobFinder" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.jobfinder.test.db.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.example.jobfinder.test.db" />
+      <option name="MAIN_CLASS_NAME" value="com.example.jobfinder.test.db.UserCRUDTest" />
+      <option name="METHOD_NAME" value="getEmployeeByID" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UserCRUDTest.getEmployerByID" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="JobFinder" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.jobfinder.test.db.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.example.jobfinder.test.db" />
+      <option name="MAIN_CLASS_NAME" value="com.example.jobfinder.test.db.UserCRUDTest" />
+      <option name="METHOD_NAME" value="getEmployerByID" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UserCRUDTest.readLoggedUser" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="JobFinder" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.jobfinder.test.db.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.example.jobfinder.test.db" />
+      <option name="MAIN_CLASS_NAME" value="com.example.jobfinder.test.db.UserCRUDTest" />
+      <option name="METHOD_NAME" value="readLoggedUser" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UserCRUDTest.testRegisterEmployee" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="JobFinder" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.jobfinder.test.db.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.example.jobfinder.test.db" />
+      <option name="MAIN_CLASS_NAME" value="com.example.jobfinder.test.db.UserCRUDTest" />
+      <option name="METHOD_NAME" value="testRegisterEmployee" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.UserCRUDTest.getEmployeeByID" />
+        <item itemvalue="JUnit.UserCRUDTest.getEmployerByID" />
+        <item itemvalue="JUnit.UserCRUDTest.checkIfEmailAvailable" />
+        <item itemvalue="JUnit.UserCRUDTest.readLoggedUser" />
+        <item itemvalue="JUnit.UserCRUDTest.testRegisterEmployee" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -114,7 +208,14 @@
       <option name="project" value="LOCAL" />
       <updated>1706295856329</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Added exceptions and toString() methods">
+      <created>1706297453198</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1706297453198</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -124,7 +225,8 @@
     <MESSAGE value="Changed saving current user method" />
     <MESSAGE value="Added message functionality" />
     <MESSAGE value="Added send files through messages functionality" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added send files through messages functionality" />
+    <MESSAGE value="Added exceptions and toString() methods" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added exceptions and toString() methods" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>
