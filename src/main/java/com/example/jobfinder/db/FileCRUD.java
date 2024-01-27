@@ -1,10 +1,5 @@
 package com.example.jobfinder.db;
 
-import com.example.jobfinder.entities.Employee;
-import javafx.scene.image.Image;
-
-import java.io.File;
-import java.io.FileInputStream;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;

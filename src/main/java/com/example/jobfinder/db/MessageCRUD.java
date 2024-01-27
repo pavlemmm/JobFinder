@@ -4,7 +4,6 @@ import com.example.jobfinder.entities.Job;
 import com.example.jobfinder.entities.Message;
 import com.example.jobfinder.enums.UserTypes;
 
-import java.io.File;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;

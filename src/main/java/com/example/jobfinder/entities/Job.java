@@ -1,6 +1,5 @@
 package com.example.jobfinder.entities;
 
-import com.example.jobfinder.db.JobCRUD;
 import com.example.jobfinder.db.UserCRUD;
 
 public class Job {

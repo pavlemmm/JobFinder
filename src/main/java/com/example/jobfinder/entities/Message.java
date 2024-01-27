@@ -4,7 +4,6 @@ import com.example.jobfinder.db.FileCRUD;
 import com.example.jobfinder.db.UserCRUD;
 import com.example.jobfinder.enums.UserTypes;
 
-import java.util.Date;
 
 public class Message {
     private int messageID;

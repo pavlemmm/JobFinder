@@ -2,7 +2,6 @@ package com.example.jobfinder.util;
 
 import com.example.jobfinder.entities.Employee;
 import com.example.jobfinder.entities.Employer;
-import com.example.jobfinder.entities.User;
 import com.example.jobfinder.enums.UserTypes;
 
 public class Session {

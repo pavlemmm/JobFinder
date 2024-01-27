@@ -1,14 +1,11 @@
 package com.example.jobfinder.test.db;
 
 import com.example.jobfinder.db.FileCRUD;
-import com.example.jobfinder.db.UserCRUD;
-import com.example.jobfinder.entities.Employee;
 import org.junit.Test;
 
 import java.sql.SQLException;
 
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNull;
 
 public class FileCRUDTest {
     /**

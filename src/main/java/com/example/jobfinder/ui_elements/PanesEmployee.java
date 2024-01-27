@@ -1,10 +1,7 @@
 package com.example.jobfinder.ui_elements;
 
 import com.example.jobfinder.db.JobCRUD;
-import com.example.jobfinder.db.MessageCRUD;
 import com.example.jobfinder.entities.Job;
-import com.example.jobfinder.entities.Message;
-import javafx.scene.control.ScrollPane;
 import javafx.scene.layout.VBox;
 
 import java.util.ArrayList;

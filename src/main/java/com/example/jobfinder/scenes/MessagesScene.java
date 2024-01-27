@@ -1,14 +1,10 @@
 package com.example.jobfinder.scenes;
 
-import com.example.jobfinder.entities.Employer;
 import com.example.jobfinder.entities.Job;
-import com.example.jobfinder.entities.User;
 import com.example.jobfinder.enums.UserTypes;
 import com.example.jobfinder.ui_elements.*;
 import com.example.jobfinder.util.Session;
-import javafx.application.Application;
 import javafx.scene.Scene;
-import javafx.scene.control.Label;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.image.Image;
 import javafx.scene.layout.BorderPane;

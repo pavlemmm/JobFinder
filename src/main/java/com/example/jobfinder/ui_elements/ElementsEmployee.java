@@ -1,12 +1,9 @@
 package com.example.jobfinder.ui_elements;
 
 import com.example.jobfinder.db.JobCRUD;
-import com.example.jobfinder.db.MessageCRUD;
 import com.example.jobfinder.db.UserCRUD;
 import com.example.jobfinder.entities.Employee;
 import com.example.jobfinder.entities.Job;
-import com.example.jobfinder.entities.Message;
-import com.example.jobfinder.enums.UserTypes;
 import com.example.jobfinder.scenes.LoginScene;
 import com.example.jobfinder.scenes.MessagesScene;
 import com.example.jobfinder.util.Session;

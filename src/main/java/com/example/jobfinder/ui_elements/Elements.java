@@ -1,6 +1,5 @@
 package com.example.jobfinder.ui_elements;
 
-import com.example.jobfinder.db.JobCRUD;
 import com.example.jobfinder.db.MessageCRUD;
 import com.example.jobfinder.entities.Job;
 import com.example.jobfinder.entities.Message;
@@ -18,8 +17,6 @@ import javafx.stage.Stage;
 
 import java.io.File;
 import java.util.ArrayList;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 public class Elements {
 

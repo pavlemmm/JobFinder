@@ -1,8 +1,6 @@
 package com.example.jobfinder.scenes;
 
 import com.example.jobfinder.db.UserCRUD;
-import com.example.jobfinder.entities.Employee;
-import com.example.jobfinder.entities.User;
 import com.example.jobfinder.enums.UserTypes;
 import com.example.jobfinder.exceptions.*;
 import com.example.jobfinder.util.Session;

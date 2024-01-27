@@ -1,6 +1,5 @@
 package com.example.jobfinder.db;
 
-import com.example.jobfinder.entities.Employee;
 import com.example.jobfinder.entities.Job;
 import com.example.jobfinder.util.Session;
 

@@ -1,22 +1,16 @@
 package com.example.jobfinder.ui_elements;
 
 import com.example.jobfinder.db.JobCRUD;
-import com.example.jobfinder.db.MessageCRUD;
-import com.example.jobfinder.db.UserCRUD;
 import com.example.jobfinder.entities.*;
-import com.example.jobfinder.enums.UserTypes;
-import com.example.jobfinder.scenes.DashboardScene;
 import com.example.jobfinder.util.Session;
 import com.example.jobfinder.util.Validation;
 import javafx.geometry.Insets;
-import javafx.geometry.Pos;
 import javafx.scene.control.*;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Font;
 
-import java.sql.SQLException;
 import java.util.ArrayList;
 
 public class PanesEmployer {
