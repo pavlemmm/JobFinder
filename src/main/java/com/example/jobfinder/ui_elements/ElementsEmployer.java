@@ -25,13 +25,21 @@ public class ElementsEmployer {
         Label payout = new Label("Payout: " + String.valueOf(job.getPayout()));
         Label status = new Label("Status: " + String.valueOf(job.getJobState()));
 
-        Button messagesBtn = Elements.buttonWithImage("message");
+
+
+        HBox rightHb = new HBox();
+
+        if(!job.getJobState().equals("Active")) {
+            Button messagesBtn = Elements.buttonWithImage("message");
+
+            messagesBtn.setOnAction(e -> {
+                new MessagesScene().start(job);
+            });
+            rightHb.getChildren().add(messagesBtn);
+        }
+
         Button deleteBtn = new Button("Delete");
         deleteBtn.setPadding(new Insets(6));
-
-        messagesBtn.setOnAction(e -> {
-            new MessagesScene().start(job);
-        });
 
         deleteBtn.setOnAction(e -> {
             JobCRUD.deleteJob(job.getID());
@@ -43,9 +51,9 @@ public class ElementsEmployer {
         v.setAlignment(Pos.CENTER_LEFT);
 
         HBox leftHb = new HBox(v, payout, status);
+        rightHb.getChildren().add(deleteBtn);
         leftHb.setSpacing(25);
         leftHb.setAlignment(Pos.CENTER);
-        HBox rightHb = new HBox(messagesBtn, deleteBtn);
         rightHb.setSpacing(5);
 
         bp.setLeft(leftHb);

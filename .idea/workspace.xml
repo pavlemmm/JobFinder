@@ -4,22 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1f05319a-41a9-4b1d-a298-ea033e00dd13" name="Changes" comment="Added exceptions and toString() methods">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/jobfinder/scenes/InfoScene.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/jobfinder/test/db/FileCRUDTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/jobfinder/test/db/UserCRUDTest.java" afterDir="false" />
+    <list default="true" id="1f05319a-41a9-4b1d-a298-ea033e00dd13" name="Changes" comment="Removed unused imports">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/jobfinder/db/FileCRUD.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/jobfinder/db/FileCRUD.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/jobfinder/db/JobCRUD.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/jobfinder/db/JobCRUD.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/jobfinder/db/MessageCRUD.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/jobfinder/db/MessageCRUD.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/jobfinder/db/UserCRUD.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/jobfinder/db/UserCRUD.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/jobfinder/scenes/LoginScene.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/jobfinder/scenes/LoginScene.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/jobfinder/scenes/RegisterScene.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/jobfinder/scenes/RegisterScene.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/jobfinder/ui_elements/ElementsEmployee.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/jobfinder/ui_elements/ElementsEmployee.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/jobfinder/ui_elements/ElementsEmployer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/jobfinder/ui_elements/ElementsEmployer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/jobfinder/ui_elements/PanesEmployer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/jobfinder/ui_elements/PanesEmployer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -73,7 +61,7 @@
       <recent name="com.example.jobfinder.scenes" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.UserCRUDTest.getEmployeeByID">
+  <component name="RunManager" selected="JUnit.UserCRUDTest.checkIfEmailAvailable">
     <configuration name="UserCRUDTest.checkIfEmailAvailable" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="JobFinder" />
       <extension name="coverage">
@@ -215,7 +203,21 @@
       <option name="project" value="LOCAL" />
       <updated>1706297453198</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Added JUnit tests">
+      <created>1706364130888</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1706364130888</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Removed unused imports">
+      <created>1706364307966</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1706364307966</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -226,7 +228,9 @@
     <MESSAGE value="Added message functionality" />
     <MESSAGE value="Added send files through messages functionality" />
     <MESSAGE value="Added exceptions and toString() methods" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added exceptions and toString() methods" />
+    <MESSAGE value="Added JUnit tests" />
+    <MESSAGE value="Removed unused imports" />
+    <option name="LAST_COMMIT_MESSAGE" value="Removed unused imports" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>

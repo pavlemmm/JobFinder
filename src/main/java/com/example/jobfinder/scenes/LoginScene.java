@@ -50,23 +50,23 @@ public class LoginScene extends Application {
 
 
         // DEBUG
-        Button quickEmployee = new Button("QUICK EMPLOYEE");
-        quickEmployee.setOnAction(e -> {
-            tf1.setText("pavlemitic@gmail.com");
-            tf2.setText("sifra123");
-        });
-        Button quickEmployer = new Button("QUICK EMPLOYER");
-        quickEmployer.setOnAction(e -> {
-            tf1.setText("google@gmail.com");
-            tf2.setText("sifra123");
-        });
-        HBox debugButtons = new HBox(quickEmployee, quickEmployer);
+//        Button quickEmployee = new Button("QUICK EMPLOYEE");
+//        quickEmployee.setOnAction(e -> {
+//            tf1.setText("pavlemitic@gmail.com");
+//            tf2.setText("sifra123");
+//        });
+//        Button quickEmployer = new Button("QUICK EMPLOYER");
+//        quickEmployer.setOnAction(e -> {
+//            tf1.setText("google@gmail.com");
+//            tf2.setText("sifra123");
+//        });
+//        HBox debugButtons = new HBox(quickEmployee, quickEmployer);
 
 
         HBox buttons = new HBox(login, register, exit, info);
         buttons.setPadding(new Insets(4));
         buttons.setSpacing(3);
-        VBox v = new VBox(log, email, pass, badCredentials, debugButtons);
+        VBox v = new VBox(log, email, pass, badCredentials);
         v.setPadding(new Insets(4));
         v.setSpacing(4);
 
@@ -115,7 +115,7 @@ public class LoginScene extends Application {
             new InfoScene();
         });
 
-        Scene scene = new Scene(bp, 320, 240);
+        Scene scene = new Scene(bp, 280, 180);
 
         stage.setTitle("JobFinder - Login");
         stage.getIcons().add(new Image("file:icon.png"));
