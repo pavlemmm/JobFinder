@@ -21,6 +21,13 @@ import java.util.ArrayList;
 public class Elements {
 
     private static String filePath = "";
+
+    /**
+     * Create button with image
+     *
+     * @param imageName - name of the image file in icons folder
+     * @return - button with image
+     */
     public static Button buttonWithImage(String imageName) {
         Button btn = new Button();
         ImageView icon = new ImageView(new Image(String.format("file:icons/%s.png", imageName)));
@@ -31,6 +38,12 @@ public class Elements {
         return btn;
     }
 
+    /**
+     * Get message hboxes
+     *
+     * @param message - Message object
+     * @return - List of message hboxes
+     */
     public static ArrayList<HBox> message(Message message) {
         ArrayList<HBox> list = new ArrayList<>();
         HBox hb = new HBox();
@@ -48,6 +61,14 @@ public class Elements {
         return list;
     }
 
+    /**
+     * Get message input hbox
+     *
+     * @param job - job object
+     * @param messagesList - messages VBox
+     * @param userType - current user type
+     * @return - HBox with message input controls
+     */
     public static HBox messageInput(Job job, VBox messagesList, UserTypes userType) {
         HBox hb = new HBox();
         TextField tf = new TextField();
@@ -80,6 +101,12 @@ public class Elements {
         return hb;
     }
 
+    /**
+     * Create messages pane
+     *
+     * @param job - job object
+     * @return - VBox with messages
+     */
     public static VBox messagesPane(Job job) {
         VBox messagesList = new VBox();
 

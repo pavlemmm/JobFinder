@@ -34,6 +34,11 @@ public class InfoScene {
         stage.show();
     }
 
+    /**
+     * Scrape text from wikihow about logging in
+     *
+     * @return - Scraped text
+     */
     public static String whatIsLogging() {
         String text = "No data";
         try {

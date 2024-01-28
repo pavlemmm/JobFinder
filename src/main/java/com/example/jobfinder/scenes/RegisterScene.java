@@ -39,6 +39,12 @@ public class RegisterScene extends Application {
         stage.show();
     }
 
+    /**
+     * Create register Tab for employee
+     *
+     * @param stage - current stage
+     * @return - register Tab for employee
+     */
     private Tab regEmployeeTab(Stage stage) {
         Tab tab = new Tab("Employee");
         tab.setClosable(false);
@@ -136,6 +142,12 @@ public class RegisterScene extends Application {
         return tab;
     }
 
+    /**
+     * Create register Tab for employer
+     *
+     * @param stage - current stage
+     * @return - register Tab for employer
+     */
     private Tab regEmployerTab(Stage stage) {
         Tab tab = new Tab("Employer");
         tab.setClosable(false);
