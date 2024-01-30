@@ -17,6 +17,12 @@ import javafx.scene.text.Font;
 import javafx.stage.Stage;
 
 public class ElementsEmployee {
+    /**
+     * Create job offer BorderPane
+     *
+     * @param job - job object
+     * @return - job offer BorderPane
+     */
     public static BorderPane jobOffer(Job job) {
         BorderPane bp = new BorderPane();
         Label title = new Label(job.getTitle());
@@ -49,6 +55,12 @@ public class ElementsEmployee {
         return bp;
     }
 
+    /**
+     * Create job offer BorderPane from my jobs
+     *
+     * @param job - job object
+     * @return - job offer BorderPane
+     */
     public static BorderPane myJob(Job job) {
         BorderPane bp = new BorderPane();
         Label title = new Label(job.getTitle());
@@ -87,6 +99,13 @@ public class ElementsEmployee {
         return bp;
     }
 
+    /**
+     * Create top bar BorderPane
+     *
+     * @param root - root Border Pane object
+     * @param stage - current stage
+     * @return - job offer BorderPane
+     */
     public static BorderPane topBar(BorderPane root, Stage stage) {
         Employee user = Session.getEmployee();
 

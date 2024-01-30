@@ -14,6 +14,12 @@ import javafx.scene.text.Font;
 import java.util.ArrayList;
 
 public class PanesEmployer {
+
+    /**
+     * Create my jobs Pane
+     *
+     * @return - job offers VBox
+     */
     public static VBox myJobsPane() {
         VBox jobsList = new VBox();
 
@@ -25,6 +31,12 @@ public class PanesEmployer {
 
         return jobsList;
     }
+
+    /**
+     * Create Border Box interface for adding new job
+     *
+     * @return - Border Box interface
+     */
 
     public static BorderPane addNewJobPane() {
         BorderPane bp = new BorderPane();

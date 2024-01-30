@@ -7,6 +7,11 @@ import javafx.scene.layout.VBox;
 import java.util.ArrayList;
 
 public class PanesEmployee {
+    /**
+     * Create all jobs Pane
+     *
+     * @return - job offers VBox
+     */
     public static VBox allJobsPane() {
         VBox jobsList = new VBox();
 
@@ -19,6 +24,11 @@ public class PanesEmployee {
         return jobsList;
     }
 
+    /**
+     * Create my jobs Pane
+     *
+     * @return - job offers VBox
+     */
     public static VBox myJobsPane() {
         VBox jobsList = new VBox();
 
