@@ -5,9 +5,21 @@ import com.example.jobfinder.entities.Employer;
 import com.example.jobfinder.enums.UserTypes;
 
 public class Session {
+    private static Session instance;
+
     private static UserTypes userType;
     private static Employee employee;
     private static Employer employer;
+
+    private Session() {
+    }
+
+    public static Session getInstance() {
+        if(instance == null) {
+            instance = new Session();
+        }
+        return instance;
+    }
 
     public static Employee getEmployee() {
         return employee;

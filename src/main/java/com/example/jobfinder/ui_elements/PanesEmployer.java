@@ -37,7 +37,6 @@ public class PanesEmployer {
      *
      * @return - Border Box interface
      */
-
     public static BorderPane addNewJobPane() {
         BorderPane bp = new BorderPane();
 

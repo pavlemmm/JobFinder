@@ -1,6 +1,6 @@
 package com.example.jobfinder.entities;
 
-public abstract class User {
+public class User {
     private int ID;
 
     public int getID() {
